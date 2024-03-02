@@ -1,1 +1,1 @@
-web: gunicorn PEI.wsgi --log-file -
+web: gunicorn baseweb.wsgi --log-file -
