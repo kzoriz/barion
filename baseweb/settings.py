@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'valorpadrao')
 # s3 = S3Connection(os.environ['SECRET_KEY'], os.environ['DEBUG'])
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False')
+DEBUG = os.environ.get('DEBUG', 'dfdfd')
 # DEBUG = S3Connection(os.environ['DEBUG'], )
 
 ALLOWED_HOSTS = ['*']
