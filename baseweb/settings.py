@@ -21,16 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'valorpadrao')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'True')
 # s3 = S3Connection(os.environ['SECRET_KEY'], os.environ['DEBUG'])
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'dfdfd')
+DEBUG = bool(os.environ.get('DEBUG', 'False').lower() == 'true')
 # DEBUG = S3Connection(os.environ['DEBUG'], )
 
 ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = []
-
 
 # Application definition
 
