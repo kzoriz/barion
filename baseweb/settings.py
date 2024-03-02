@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = bool(os.environ.get('DEBUG', '').lower() == 'true')
 # DEBUG = S3Connection(os.environ['DEBUG'], )
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '')
 # ALLOWED_HOSTS = []
 
 # Application definition
