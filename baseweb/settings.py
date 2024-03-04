@@ -12,26 +12,29 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 import django_on_heroku
-from boto.s3.connection import S3Connection
+import environ
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+# # Desenvolvimento
+# env = environ.Env(
+#     # set casting, default value
+#     DEBUG=(bool, False)
+# )
+# environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+# SECRET_KEY = env('SECRET_KEY')
+# DEBUG = env('DEBUG')
+# ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
-# SECURITY WARNING: keep the secret key used in production secret!
+
+# Produção
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
-# s3 = S3Connection(os.environ['SECRET_KEY'], os.environ['DEBUG'])
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DEBUG', '').lower() == 'true')
-# DEBUG = S3Connection(os.environ['DEBUG'], )
-
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '')
-# ALLOWED_HOSTS = []
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
